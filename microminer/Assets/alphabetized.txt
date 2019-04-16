@@ -1,0 +1,5 @@
+center java programming http://java.com
+hello world http://www.helloworld.com
+java programming center http://java.com
+programming center java http://java.com
+world hello http://www.helloworld.com

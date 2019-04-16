@@ -1,0 +1,23 @@
+<div>
+    <br />
+    <br />
+    <br />
+
+    <form>
+  
+            <div class="row">
+                <div class="col-md-10"><input class="form-control my-0 py-1" type="text" placeholder="Search" aria-label="Search" [(ngModel)]="description" [ngModelOptions]="{standalone: true}"></div>
+                <div class="col-md-2"><button (click)="search()" class="btn btn-primary" style="float:left">Go!</button></div>
+            </div>
+        
+            <label for="exampleFormControlTextarea1">Result</label>
+            <div class="row">
+                           
+                <div class="col-md-10">
+                    <textarea class="form-control my-0 py-1" id="exampleFormControlTextview1" rows="9">{{ searchResult }} </textarea>
+                </div>
+             </div>
+
+    </form>
+</div>
+
