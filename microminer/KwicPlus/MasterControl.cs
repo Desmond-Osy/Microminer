@@ -5,10 +5,10 @@ namespace microminer.KwicPlus
 {
     public class MasterControl
     {
-        private readonly CircularShift circularShifter;
-        private readonly Alphabetizer alphabetizer;
-        private readonly OutputMedium outputManager;
-        private readonly InputMedium inputManager;
+        private  CircularShift circularShifter;
+        private  Alphabetizer alphabetizer;
+        private  OutputMedium outputManager;
+        private  InputMedium inputManager;
 
         private char[] input;
         private char[] links;
