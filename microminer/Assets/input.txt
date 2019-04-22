@@ -1,2 +1,0 @@
-hello world http://www.helloworld.com
-java programming center http://java.com

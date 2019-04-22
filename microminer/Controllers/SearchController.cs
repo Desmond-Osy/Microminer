@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using microminer.Models;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -11,9 +12,15 @@ namespace microminer.Controllers
     [Route("api/[controller]")]
     public class SearchController : Controller
     {
-        
 
-        Microminer microMiner = new Microminer();
+        private DataDBContext dbContext;
+        Microminer microMiner;
+        public SearchController(DataDBContext dataDBContext)
+        {
+            this.dbContext = dataDBContext;
+            microMiner = new Microminer(dbContext);
+        }
+
 
         // POST api/<controller>
         [HttpPost]

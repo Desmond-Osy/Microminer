@@ -1,4 +1,5 @@
 ﻿using microminer.KwicPlus;
+using microminer.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,28 +13,28 @@ namespace microminer
         private readonly DataManager dataManager;
         private readonly MasterControl masterControl;
 
-        public Microminer()
+        public Microminer(DataDBContext dbContext)
         {
-            dataManager = new DataManager();
+            dataManager = new DataManager(dbContext);
             masterControl = new MasterControl();
         }
 
         public void SetInput(string input)
         {
-            dataManager.saveToFile(input, "input.txt");
+            dataManager.saveToFile(input, "input");
             masterControl.SetInput(input);
 
-            dataManager.saveToFile(masterControl.GetAlphabetized(), "alphabetized.txt");
+            dataManager.saveToFile(masterControl.GetAlphabetized(), "alphabetized");
         }
 
         public List<string> GetMatches(string input)
         {
-            return dataManager.GetContainingLines(input, "input.txt");
+            return dataManager.GetContainingLines(input);
         }
 
         public string GetAlphabetized()
         {
-            return dataManager.GetAllData("alphabetized.txt");
+            return dataManager.GetAllData();
         }
 
     }

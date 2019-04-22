@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using microminer.Models;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -10,9 +11,15 @@ namespace microminer.Controllers
     [Route("api/[controller]")]
     public class KwicController : Controller
     {
-        
+        private DataDBContext dbContext;
+        Microminer microMiner;
+        public KwicController(DataDBContext dataDBContext)
+        {
+            this.dbContext = dataDBContext;
+            microMiner =  new Microminer(dbContext);
+        }
 
-        Microminer microMiner = new Microminer();
+        
 
         // POST api/<controller>
         [HttpPost]
