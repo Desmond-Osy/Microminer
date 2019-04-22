@@ -22,9 +22,9 @@ namespace microminer
         public void SetInput(string input)
         {
             dataManager.saveToFile(input, "input");
-            masterControl.SetInput(input);
+            masterControl.Initialize(input);
 
-            dataManager.saveToFile(masterControl.GetAlphabetized(), "alphabetized");
+            dataManager.saveToFile(masterControl.Alphabetized, "alphabetized");
         }
 
         public List<string> GetMatches(string input)
